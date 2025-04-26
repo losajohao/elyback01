@@ -1,14 +1,11 @@
-import { Pool } from 'pg';
 import { Period } from '../models/Period';
-
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-});
+import pool from '../config/db';
 
 export class PeriodRepository {
   async getAll(): Promise<Period[]> {
     try {
       const result = await pool.query('SELECT * FROM periods');
+      console.log(result);
       return result.rows as Period[];
     } catch (error: any) {
       console.error(error);
