@@ -7,5 +7,10 @@
       "config": { "typescript": true }
     }
   ],
-  "routes": []
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ]
 }
