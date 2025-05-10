@@ -12,7 +12,7 @@ const start = async function() {
     await server.register({
         plugin: HapiCors,
         options: {
-            origin: ['*'],
+            origins: ['*'],
             methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
         }
     }); // Registrar el plugin CORS
