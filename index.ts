@@ -1,5 +1,6 @@
 import Hapi from '@hapi/hapi';
 import routes from './src/routes';
+import HapiCors from 'hapi-cors'; // Importar el plugin CORS
 
 const start = async function() {
 
@@ -7,6 +8,14 @@ const start = async function() {
         port: 3000,
         host: 'localhost'
     });
+
+    await server.register({
+        plugin: HapiCors,
+        options: {
+            origins: ['*'],
+            methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
+        }
+    }); // Registrar el plugin CORS
 
     server.route(routes);
 

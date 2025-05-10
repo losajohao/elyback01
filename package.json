@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "dotenv": "^16.5.0",
+    "hapi-cors": "^1.0.3",
     "pg": "^8.15.5"
   }
 }
